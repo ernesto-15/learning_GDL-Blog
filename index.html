@@ -1,0 +1,360 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>GDL WebCamp</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="hero">
+      <div class="header-content">
+
+        <!-- REDES SOCIALES -->
+        <nav class="social-network">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+
+        <!-- INFORMACION DEL EVENTO -->
+        <div class="event-information">
+          <p class="date"> <i class="fas fa-calendar-alt"></i> 10-12 Dic</p>
+          <p class="city"> <i class="fas fa-map-marker-alt"></i> Huancayo, Peru</p>
+        </div>
+
+        <h1 class="website-name">GdlWebCamp</h1>
+        <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="bar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="logo gdlwebcamp">
+      </a>
+
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <nav class="principal-menu desktop">
+        <a href="#">Conferencia</a>
+        <a href="#">Calendario</a>
+        <a href="#">Invitados</a>
+        <a href="registro.html">Reservaciones</a>
+      </nav>
+    </div>
+
+    <nav class="principal-menu">
+      <a href="#">Conferencia</a>
+      <a href="#">Calendario</a>
+      <a href="#">Invitados</a>
+      <a href="#">Reservaciones</a>
+    </nav>
+  </div>
+
+  <section class="container-section">
+    <h2>
+      La mejor conferencia de diseño web en español
+    </h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, ratione? Expedita aut sequi vitae ex itaque
+      enim? Ratione non ipsa, vero dolor in commodi? Tempora molestias a iure magnam nisi. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Dolorum hic magnam quibusdam assumenda omnis, a illum recusandae nulla perferendis
+      reiciendis? Optio amet eveniet temporibus eaque esse rem tenetur deserunt quia.
+    </p>
+  </section>
+
+  <section class="program">
+    <div class="video-container">
+      <video loop autoplay muted>
+        <source src="video/video.mp4">
+        <source src="video/video.webm" type="video/webm">
+        <source src="video/video.ogv" type="video/ogv">
+      </video>
+    </div>
+
+    <div class="program-content">
+      <div class="program-event">
+        <h2>
+          Programa del Evento
+        </h2>
+        <nav class="program-menu">
+          <a href="#talleres"><i class="fas fa-code"></i> Talleres</a>
+          <a href="#conferencias"><i class="fas fa-comment"></i> Conferencias</a>
+          <a href="#seminarios"><i class="fas fa-university"></i> Seminarios</a>
+        </nav>
+        <div id="talleres" class="info-curso ocultar clearfix">
+          <div class="event-detail">
+            <h3>HTML5, CSS3, JS</h3>
+            <p><i class="fas fa-clock"></i> 16:00 hrs</p>
+            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
+            <p><i class="fas fa-user"></i> Juan Pablo de La Torre</p>
+          </div>
+          <div class="event-detail">
+            <h3>Responsive Design</h3>
+            <p><i class="fas fa-clock"></i> 20:00 hrs</p>
+            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
+            <p><i class="fas fa-user"></i> Juan Pablo de La Torre</p>
+          </div>
+          <a href="#" class="button float-rigth">Ver todos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guests container ">
+    <h2>NUESTROS INVITADOS</h2>
+    <ul class="guest-list">
+      <li>
+        <div class="guest">
+          <img src="img/invitado1.jpg" alt="invitado 1">
+          <p>Rafael Baustista</p>
+        </div>
+      </li>
+      <li>
+        <div class="guest">
+          <img src="img/invitado2.jpg" alt="invitado 2">
+          <p>Shari Herrera</p>
+        </div>
+      </li>
+      <li>
+        <div class="guest">
+          <img src="img/invitado3.jpg" alt="invitado 3">
+          <p>Gregorio Sanchez</p>
+        </div>
+      </li>
+      <li>
+        <div class="guest">
+          <img src="img/invitado4.jpg" alt="invitado 4">
+          <p>Susana Rivera</p>
+        </div>
+      </li>
+      <li>
+        <div class="guest">
+          <img src="img/invitado5.jpg" alt="invitado 5">
+          <p>Harold Garcia</p>
+        </div>
+      </li>
+      <li>
+        <div class="guest">
+          <img src="img/invitado6.jpg" alt="invitado 6">
+          <p>Susan Sanchez</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <div class="counter paralax">
+    <div class="container-summary">
+      <ul class="summary-event">
+        <li>
+          <p class="number">6</p>Invitados
+        </li>
+        <li>
+          <p class="number">15</p>Talleres
+        </li>
+        <li>
+          <p class="number">3</p>Dias
+        </li>
+        <li>
+          <p class="number">9</p>Conferencias
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="prices seccion">
+    <h2>PRECIOS</h2>
+    <div class="containers">
+      <ul class="price-list">
+        <li>
+          <div class="price-table">
+            <h3>Paase por dia</h3>
+            <p class="number">$30</p>
+            <ul>
+              <li><i class="fas fa-check"></i>Bocadillos Gratis</li>
+              <li><i class="fas fa-check"></i>Todas las Conferencias</li>
+              <li><i class="fas fa-check"></i>Todos los Talleres</li>
+            </ul>
+            <a href="#" class="button hollow">Comprar</a>
+          </div>
+        </li>
+        <li>
+          <div class="price-table">
+            <h3>Todos los dias</h3>
+            <p class="number">$50</p>
+            <ul>
+              <li><i class="fas fa-check"></i>Bocadillos Gratis</li>
+              <li><i class="fas fa-check"></i>Todas las Conferencias</li>
+              <li><i class="fas fa-check"></i>Todos los Talleres</li>
+            </ul>
+            <a href="#" class="button">Comprar</a>
+          </div>
+        </li>
+        <li>
+          <div class="price-table">
+            <h3>Paase por 2 dias</h3>
+            <p class="number">$45</p>
+            <ul>
+              <li><i class="fas fa-check"></i>Bocadillos Gratis</li>
+              <li><i class="fas fa-check"></i>Todas las Conferencias</li>
+              <li><i class="fas fa-check"></i>Todos los Talleres</li>
+            </ul>
+            <a href="#" class="button hollow">Comprar</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div id="map" class="map"></div>
+
+  <section class="testimonials">
+    <h2>Testimoniales</h2>
+    <div class="testimonial-container clearfix">
+      <div class="testimonial">
+        <blockquote>
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+          </p>
+          <footer class="info-testimonial">
+            <img src="img/testimonial.jpg" alt="imagen testimonial">
+            <cite>Ernesto Angulo <span>Weber en @Google</span></cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+          </p>
+          <footer class="info-testimonial">
+            <img src="img/testimonial.jpg" alt="imagen testimonial">
+            <cite>Ernesto Angulo <span>Weber en @Google</span></cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+          </p>
+          <footer class="info-testimonial">
+            <img src="img/testimonial.jpg" alt="imagen testimonial">
+            <cite>Ernesto Angulo <span>Weber en @Google</span></cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <div class="news-letter paralax">
+    <div class="content">
+      <p>Registrarte al Newsletter</p>
+      <h3>GDLWEBCAMP</h3>
+      <a href="#" class="button transparent">Registro</a>
+    </div>
+  </div>
+
+  <section class="countdown">
+    <h2>FALTAN</h2>
+    <div class="countdown-container">
+      <ul>
+        <li>
+          <p class="number">80</p>Dias
+        </li>
+        <li>
+          <p class="number">15</p>Horas
+        </li>
+        <li>
+          <p class="number">5</p>Minutos
+        </li>
+        <li>
+          <p class="number">30</p>Segundos
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-information">
+        <h3>Sobre <span>GDLWEBCAMP</span></h3>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, </p>
+      </div>
+      <div class="last-tweets">
+        <h3>Ultimos <span>Tweets</span></h3>
+        <ul>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          </li>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          </li>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          </li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h3>Redes <span>Sociales</span></h3>
+        <nav class="social-network">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+      </div>
+    </div>
+    <p class="copyrigth">
+      Todos los derechos reservados GDLWEBCAMP 2019.
+    </p>
+  </footer>
+
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
