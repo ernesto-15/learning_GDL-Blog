@@ -275,6 +275,11 @@ h2::after {
 }
 
 /* ------------ PROGRAMA ------------ */
+
+div.ocultar {
+  display: none;
+}
+
 div.program-event {
   padding: 10px 25px;
 }
@@ -542,7 +547,6 @@ div.price-table p.number {
 /* ------------ MAPA ------------ */
 div.map {
   height: 420px;
-  background-color: #fe4918;
 }
 
 /* ------------ TESTIMONIALES ------------ */
