@@ -343,6 +343,13 @@ div.event-detail p {
   font-size: 20px;
 }
 
+.button-container {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .button {
   background-color: #fe4918;
   padding: 10px 40px;
@@ -351,7 +358,7 @@ div.event-detail p {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
-  margin-top: 20px;
+  margin: 0;
   display: inline-block;
   transition: all 0.3s;
   border: 2px solid #fe4918;
@@ -361,9 +368,7 @@ div.event-detail p {
   background-color: #e33000;
 }
 
-.float-rigth {
-  float: right;
-}
+
 
 /* ------------ INVITADOS ------------ */
 section.guests {
