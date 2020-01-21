@@ -15,7 +15,13 @@
                     elemento.style.display = 'none'
                 });
 
+                document.querySelectorAll('.activo').forEach(elemento => {
+                    elemento.classList.remove('activo')
+                });
+
                 target.style.display = 'block';
+                target.classList.add('fadeIn');
+                element.classList.add('activo')
                 console.log(target);
             })
         });

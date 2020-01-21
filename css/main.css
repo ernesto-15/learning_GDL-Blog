@@ -280,6 +280,20 @@ div.ocultar {
   display: none;
 }
 
+div.fadeIn {
+  animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
 div.program-event {
   padding: 10px 25px;
 }
@@ -320,8 +334,9 @@ nav.program-menu a {
   color: black;
   text-decoration: none;
   font-family: 'Oswald', sans-serif;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   font-size: 1.2em;
+  padding-bottom: 10px;
 }
 
 nav.program-menu a i, div.event-detail p i {
@@ -348,6 +363,7 @@ div.event-detail p {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 0;
 }
 
 .button {
@@ -927,6 +943,25 @@ div.summary select {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  nav.program-menu a {
+    position: relative;
+  }
+
+  nav.program-menu a.activo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    height: 20px;
+    width: 30px;
+    background-image: url(../img/talleres-flecha.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    bottom: -20px;
   }
 
   ul.price-list {
