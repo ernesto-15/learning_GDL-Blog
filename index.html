@@ -63,18 +63,18 @@
       </div>
 
       <nav class="principal-menu desktop">
-        <a href="#">Conferencia</a>
+        <a href="conferencia.html">Conferencia</a>
         <a href="#">Calendario</a>
         <a href="#">Invitados</a>
         <a href="registro.html">Reservaciones</a>
       </nav>
     </div>
 
-    <nav class="principal-menu">
-      <a href="#">Conferencia</a>
+    <nav class="principal-menu burger-menu">
+      <a href="conferencia.html">Conferencia</a>
       <a href="#">Calendario</a>
       <a href="#">Invitados</a>
-      <a href="#">Reservaciones</a>
+      <a href="registro.html">Reservaciones</a>
     </nav>
   </div>
 
@@ -212,16 +212,16 @@
     <div class="container-summary">
       <ul class="summary-event">
         <li>
-          <p class="number">6</p>Invitados
+          <p class="number"></p>Invitados
         </li>
         <li>
-          <p class="number">15</p>Talleres
+          <p class="number"></p>Talleres
         </li>
         <li>
-          <p class="number">3</p>Dias
+          <p class="number"></p>Dias
         </li>
         <li>
-          <p class="number">9</p>Conferencias
+          <p class="number"></p>Conferencias
         </li>
       </ul>
     </div>
@@ -328,16 +328,16 @@
     <div class="countdown-container">
       <ul>
         <li>
-          <p class="number">80</p>Dias
+          <p id="days" class="number"></p>Dias
         </li>
         <li>
-          <p class="number">15</p>Horas
+          <p id="hours" class="number"></p>Horas
         </li>
         <li>
-          <p class="number">5</p>Minutos
+          <p id="minutes" class="number"></p>Minutos
         </li>
         <li>
-          <p class="number">30</p>Segundos
+          <p id="seconds" class="number"></p>Segundos
         </li>
       </ul>
     </div>
@@ -384,6 +384,9 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="./js/jquery.animateNumber.min.js"></script>
+  <script src="./js/jquery.countdown.min.js"></script>
+  <script src="./js/jquery.lettering.js"></script>
   <script src="js/main.js"></script>
   <script src="js/map.js"></script>
 

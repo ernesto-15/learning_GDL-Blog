@@ -3,14 +3,12 @@
 
     document.addEventListener('DOMContentLoaded', () => {
 
-        document.querySelector('.program-event .info-curso').style.display = 'block'
-
         document.querySelectorAll('.program-menu a').forEach(element => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 let pressedLink = element;
                 let target = document.getElementById(pressedLink.attributes.href.value.slice(1));
-                
+
                 document.querySelectorAll('.ocultar').forEach(elemento => {
                     elemento.style.display = 'none'
                 });
@@ -26,20 +24,80 @@
             })
         });
 
+        //SCROLL
+
+        let windowHeight = window.innerHeight
+        let barHeigight = document.querySelector('.bar').clientHeight
+
+        window.onscroll = () => {
+            let bar = document.querySelector('.bar')
+            let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scroll > windowHeight) {
+                bar.classList.add('fixed');
+                document.querySelector('body').style.marginTop = `${barHeigight}px`
+            } else {
+                bar.classList.remove('fixed');
+                document.querySelector('body').style.marginTop = '0px'
+            }
+        }
+
+        //MENU HAMBURGUESA
+        let hamburgerMenu = document.querySelector('.burger')
+        const largo = window.matchMedia('screen and (max-width: 767px)');
+        let menu = document.querySelector('.burger-menu');
+
+        
+        let validation = () => {
+            if (largo.matches == true) {
+                hamburgerMenu.addEventListener('click', hideShow);
+            } else {
+                menu.style.display = 'none'
+            }
+            
+            console.log(largo.matches);
+        }
+        
+        largo.addListener(validation)
 
 
+        let hideShow = () => {
+            menu.classList.add('fadeIn');
+            if (menu.offsetWidth > 0 || menu.offsetHeight > 0 === true) {
+                menu.style.display = 'none'
+            } else {
+                menu.style.display = 'block'
+            }
+            console.log(menu);
+        }
 
+        validation();
+
+        document.querySelector('.program-event .info-curso').style.display = 'block'
     });
 })();
 
 
-// $(function() {
-//     $('.program-event .info-curso:first').show();
-//     $('.program-menu a').click(function (e) { 
-//         e.preventDefault();
-//         $('.ocultar').hide()
-//         var enlace = $(this).attr('href');
-//         console.log(enlace);
-//         $(enlace).fadeIn(1000)
-//     });
-// }) 
+//JQUERY PLUGINS
+
+$(function () {
+
+    //LETTERING
+
+    $('.website-name').lettering();
+
+    //ANIMACIONES PARA NUMEROS
+
+    $('.summary-event li:nth-child(1) p').animateNumber({ number: 6 }, 1200)
+    $('.summary-event li:nth-child(2) p').animateNumber({ number: 15 }, 1200)
+    $('.summary-event li:nth-child(3) p').animateNumber({ number: 3 }, 600)
+    $('.summary-event li:nth-child(4) p').animateNumber({ number: 9 }, 1500)
+
+    //CUENTA REGRESIVA
+
+    $('.countdown-container').countdown('2020/03/05 09:00:00', function (event) {
+        $('#days').html(event.strftime('%D'))
+        $('#hours').html(event.strftime('%H'))
+        $('#minutes').html(event.strftime('%M'))
+        $('#seconds').html(event.strftime('%S'))
+    })
+}) 

@@ -2,8 +2,6 @@
     'use strict';
 
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('object');
-
         var map = L.map('map').setView([-12.074522, 284.799474], 18);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

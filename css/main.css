@@ -121,6 +121,13 @@ h3 {
 }
 
 /* ------------ HEADER ------------ */
+
+/**LETTERIGN**/
+h1.website-name span {
+  position: relative;
+  text-shadow: 0 0 30px black;
+}
+
 div.hero {
   background-image: url(../img/encabezado.jpg);
   height: 100vh;
@@ -189,6 +196,21 @@ p.slogan span {
 }
 
 /* ------------ MENU ------------ */
+
+.burger-container {
+  animation: menua 1s;
+}
+
+@keyframes menua {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
 div.container {
   width: 100%;
   display: flex;
@@ -196,6 +218,14 @@ div.container {
   justify-content: space-between;
   align-items: center;
 
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
 }
 
 div.bar {
@@ -908,6 +938,54 @@ div.summary select {
   font-size: 2em;
   font-weight: bolder;
   color: #fe4918;
+}
+
+/* ------------ CONFERENCIA ------------ */
+section.photos {
+  padding: 10px 60px;
+  margin-bottom: 31.872px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ------------ MEDIA QUERYS ------------ */
+
+@media only screen and (min-width: 992px) {
+  .char1 {
+    top: 20px; right: 20px;
+  }
+  .char2 {
+    top: 0px; left: -20px;
+  }
+  .char3 {
+    top: 10px; right: 20px;
+  }
+  .char4 {
+    top: 5px; right: 10px;
+  }
+  .char5 {
+    top: 15px; right: 10px;
+  }
+  .char6 {
+    top: 5px; left: 10px;
+  }
+  .char7 {
+    top: 20px; left: -10px;
+  }
+  .char8 {
+    top: 0px; left: 10px;
+  }
+  .char9 {
+    top: 10px; right: 20px;
+  }
+  .char10 {
+    top: 20px; right: 20px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
