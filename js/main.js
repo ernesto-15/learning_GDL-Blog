@@ -44,33 +44,58 @@
         //MENU HAMBURGUESA
         let hamburgerMenu = document.querySelector('.burger')
         const largo = window.matchMedia('screen and (max-width: 767px)');
-        let menu = document.querySelector('.burger-menu');
+        let menu = document.querySelector('.responsive-menu');
 
-        
+        let slideUP = () => {
+            menu.style.transition = "all 0.3s ease-in-out";
+            menu.style.height = "0px";
+
+        }
+
+        let slideDown = () => {
+            menu.style.transition = "all 0.3s ease-in-out";
+            menu.style.height = `140.4px`;
+        }
+
         let validation = () => {
+
             if (largo.matches == true) {
+                menu.classList.remove('burguer-menu');
                 hamburgerMenu.addEventListener('click', hideShow);
             } else {
-                menu.style.display = 'none'
+                menu.classList.add('burguer-menu')
             }
-            
+
             console.log(largo.matches);
         }
-        
+
         largo.addListener(validation)
 
-
         let hideShow = () => {
-            menu.classList.add('fadeIn');
-            if (menu.offsetWidth > 0 || menu.offsetHeight > 0 === true) {
-                menu.style.display = 'none'
+
+            if (menu.classList.contains('is-active')) {
+                menu.classList.remove('is-active')
+                // menuLinks.forEach(elemento => {
+                //     elemento.style.transition = 'all 1s ease-in-out'
+                //     elemento.style.opacity = '0'
+                // })
+                slideUP()
             } else {
-                menu.style.display = 'block'
+                menu.classList.add('is-active')
+                // menuLinks.forEach(elemento => {
+                //     elemento.style.transition = 'all 1s ease-in-out'
+                //     elemento.style.opacity = '1'
+                // })
+                slideDown()
             }
-            console.log(menu);
         }
 
         validation();
+
+
+
+
+
 
         document.querySelector('.program-event .info-curso').style.display = 'block'
     });
@@ -100,4 +125,4 @@ $(function () {
         $('#minutes').html(event.strftime('%M'))
         $('#seconds').html(event.strftime('%S'))
     })
-}) 
+})

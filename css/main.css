@@ -197,18 +197,12 @@ p.slogan span {
 
 /* ------------ MENU ------------ */
 
-.burger-container {
-  animation: menua 1s;
+.responsive-menu {
+  overflow: hidden;
 }
 
-@keyframes menua {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
+nav.burguer-menu {
+  display: none;
 }
 
 div.container {
@@ -240,10 +234,6 @@ a.logo img {
 nav.desktop {
   display: none;
   width: 67%;
-}
-
-nav.principal-menu {
-  display: none;
 }
 
 nav.principal-menu a {
