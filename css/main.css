@@ -943,6 +943,48 @@ section.photos {
   flex-wrap: wrap;
 }
 
+/* ------------ CALENDARIO ------------ */
+
+.day-date h3{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  margin: 20px 0;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.day {
+  padding: 15px;
+  border: 3px solid black;
+  margin: 10px;
+  transition: all 0.3s;
+}
+
+.day:hover {
+  background-color: #ccc;
+  transform: scale(1.1);
+}
+
+.day p:first-child {
+  color: #e33000;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.day p {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.day p i {
+  color: #e33000;
+}
+
 /* ------------ MEDIA QUERYS ------------ */
 
 @media only screen and (min-width: 992px) {
@@ -975,6 +1017,12 @@ section.photos {
   }
   .char10 {
     top: 20px; right: 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .days {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1065,16 +1113,20 @@ section.photos {
     justify-content: space-evenly;
     align-items: center;
   }
-  
+
   div.summary .extras {
     width: 40%;
     padding: 30px;
   }
-  
+
   div.summary .total {
     width: 40%;
     margin-bottom: 10px;
   }
+
+  .days {
+    grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 @media only screen and (min-width: 992px) {
