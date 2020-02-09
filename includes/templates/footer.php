@@ -42,9 +42,22 @@
   <script src="./js/jquery.animateNumber.min.js"></script>
   <script src="./js/jquery.countdown.min.js"></script>
   <script src="./js/jquery.lettering.js"></script>
-  <script src="./js/register.js"></script>
+  <script src="./js/jquery.colorbox-min.js"></script>
+  <!-- <script src="./js/register.js"></script> -->
   <script src="js/main.js"></script>
   <!-- <script src="js/map.js"></script> -->
+
+  <?php
+
+  $archivo = basename($_SERVER['PHP_SELF']);
+  $pagina = str_replace(".php", "", $archivo);
+  if($pagina == "index") {
+    echo '<script src="js/map.js"></script>';
+  } else if($pagina == "registro") {
+    echo '<script src="./js/register.js"></script>';
+  }
+
+  ?>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

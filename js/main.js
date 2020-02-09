@@ -66,7 +66,7 @@
                 menu.classList.add('burguer-menu')
             }
 
-            console.log(largo.matches);
+            // console.log(largo.matches);
         }
 
         largo.addListener(validation)
@@ -92,7 +92,47 @@
 
         validation();
 
+        let link_menu = []
 
+        document.querySelectorAll('body.conferencia .principal-menu a').forEach(element => {
+          if(element.textContent === 'Conferencia') {
+            link_menu.push(element)
+          }
+        });
+
+        link_menu.forEach(element => {
+          element.classList.add('active')
+        })
+
+        document.querySelectorAll('body.calendario .principal-menu a').forEach(element => {
+          if(element.textContent === 'Calendario') {
+            link_menu.push(element)
+          }
+        });
+
+        link_menu.forEach(element => {
+          element.classList.add('active')
+        })
+
+        document.querySelectorAll('body.invitados .principal-menu a').forEach(element => {
+          if(element.textContent === 'Invitados') {
+            link_menu.push(element)
+          }
+        });
+
+        link_menu.forEach(element => {
+          element.classList.add('active')
+        })
+
+        document.querySelectorAll('body.registro .principal-menu a').forEach(element => {
+          if(element.textContent === 'Reservaciones') {
+            link_menu.push(element)
+          }
+        });
+
+        link_menu.forEach(element => {
+          element.classList.add('active')
+        })
 
 
 
@@ -125,4 +165,8 @@ $(function () {
         $('#minutes').html(event.strftime('%M'))
         $('#seconds').html(event.strftime('%S'))
     })
+
+    //COLORBOX
+
+    $('.invitado_info').colorbox({inline:true, width: "50%"})
 })

@@ -88,47 +88,7 @@
     </div>
   </section>
 
-  <section class="guests container ">
-    <h2>NUESTROS INVITADOS</h2>
-    <ul class="guest-list">
-      <li>
-        <div class="guest">
-          <img src="img/invitado1.jpg" alt="invitado 1">
-          <p>Rafael Baustista</p>
-        </div>
-      </li>
-      <li>
-        <div class="guest">
-          <img src="img/invitado2.jpg" alt="invitado 2">
-          <p>Shari Herrera</p>
-        </div>
-      </li>
-      <li>
-        <div class="guest">
-          <img src="img/invitado3.jpg" alt="invitado 3">
-          <p>Gregorio Sanchez</p>
-        </div>
-      </li>
-      <li>
-        <div class="guest">
-          <img src="img/invitado4.jpg" alt="invitado 4">
-          <p>Susana Rivera</p>
-        </div>
-      </li>
-      <li>
-        <div class="guest">
-          <img src="img/invitado5.jpg" alt="invitado 5">
-          <p>Harold Garcia</p>
-        </div>
-      </li>
-      <li>
-        <div class="guest">
-          <img src="img/invitado6.jpg" alt="invitado 6">
-          <p>Susan Sanchez</p>
-        </div>
-      </li>
-    </ul>
-  </section>
+  <?php require_once "includes/templates/invitados.php" ?>x
 
   <div class="counter paralax">
     <div class="container-summary">
