@@ -26,64 +26,70 @@
         <h2>
           Programa del Evento
         </h2>
+        <?php
+          require_once "includes/functions/bd_conexion.php";
+
+          $conexion = conexion("gdlwebcamp", "root", "");
+
+          if (empty($conexion)) {
+            header("Location: error.php");
+          }
+
+          $sql = "SELECT * FROM categoria_evento";
+          $resultado = $conexion->query($sql);
+          $sql_2 = "(SELECT E.evento_id, E.nombre_evento, E.fecha_evento, E.hora_evento, C.cat_evento, I.nombre_invitado, I.apellido_invitado
+          FROM eventos E INNER JOIN categoria_evento C ON E.id_cat_evento = C.id_categoria
+          INNER JOIN invitados I ON E.id_inv = I.invitado_id AND E.id_cat_evento = 1
+          LIMIT 2) UNION ALL (SELECT E.evento_id, E.nombre_evento, E.fecha_evento, E.hora_evento, C.cat_evento, I.nombre_invitado, I.apellido_invitado
+          FROM eventos E INNER JOIN categoria_evento C ON E.id_cat_evento = C.id_categoria
+          INNER JOIN invitados I ON E.id_inv = I.invitado_id AND E.id_cat_evento = 2 LIMIT 2)
+          UNION ALL (SELECT E.evento_id, E.nombre_evento, E.fecha_evento, E.hora_evento, C.cat_evento, I.nombre_invitado, I.apellido_invitado
+          FROM eventos E INNER JOIN categoria_evento C ON E.id_cat_evento = C.id_categoria
+          INNER JOIN invitados I ON E.id_inv = I.invitado_id AND E.id_cat_evento = 3 LIMIT 2)";
+          $resultado_2 = $conexion->query($sql_2);
+
+          $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
+          $categorias = array_reverse($categorias);
+
+          $todos = $resultado_2->fetchAll(PDO::FETCH_ASSOC);
+          $todos = array_reverse($todos);
+
+        ?>
+
         <nav class="program-menu">
-          <a href="#talleres" class="activo"><i class="fas fa-code"></i> Talleres</a>
-          <a href="#conferencias"><i class="fas fa-comment"></i> Conferencias</a>
-          <a href="#seminarios"><i class="fas fa-university"></i> Seminarios</a>
+          <?php foreach ($categorias as $key => $categoria): ?>
+          <a href="#<?=strtolower($categoria['cat_evento'])."s"?>""><i class="fas <?=$categoria['icono']?>"></i> <?=$categoria['cat_evento']."s"?></a>
+          <?php endforeach; ?>
         </nav>
-        <div id="talleres" class="info-curso ocultar">
-          <div class="event-detail">
-            <h3>HTML5, CSS3, JS</h3>
-            <p><i class="fas fa-clock"></i> 16:00 hrs</p>
-            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
-            <p><i class="fas fa-user"></i> Juan Pablo de La Torre</p>
-          </div>
-          <div class="event-detail">
-            <h3>Responsive Design</h3>
-            <p><i class="fas fa-clock"></i> 20:00 hrs</p>
-            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
-            <p><i class="fas fa-user"></i> Juan Pablo de La Torre</p>
-          </div>
-          <div class="button-container">
-            <a href="#" class="button float-rigth">Ver todos</a>
-          </div>
-        </div>
+        <?php
+        $muestras = [];
+        foreach ($todos as $key => $todo) {
+          $arr = [
+            'titulo' => $todo['nombre_evento'],
+            'fecha' => $todo['fecha_evento'],
+            'hora' => $todo['hora_evento'],
+            'categoria' => $todo['cat_evento'],
+            'invitado' => $todo['nombre_invitado']." ".$todo['apellido_invitado']
+          ];
+          $muestras[$todo['cat_evento']][] = $arr;
+        }
+        ?>
 
-        <div id="conferencias" class="info-curso ocultar">
+        <?php foreach ($muestras as $key => $muestra): ?>
+        <div id="<?=strtolower($key)."s"?>" class="info-curso ocultar">
+          <?php foreach ($muestra as $value): ?>
           <div class="event-detail">
-            <h3>Como ser Freelancer</h3>
-            <p><i class="fas fa-clock"></i> 10:00 hrs</p>
-            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
-            <p><i class="fas fa-user"></i> Gregorio Sanchez</p>
+            <h3><?= strtoupper($value['titulo']) ?></h3>
+            <p><i class="fas fa-clock"></i> <?= $value['hora'] ?></p>
+            <p><i class="fas fa-calendar-alt"></i> <?= $value['fecha'] ?></p>
+            <p><i class="fas fa-user"></i> <?= $value['invitado'] ?></p>
           </div>
-          <div class="event-detail">
-            <h3>Tecnologias del futuro</h3>
-            <p><i class="fas fa-clock"></i> 17:00 hrs</p>
-            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
-            <p><i class="fas fa-user"></i> Susan Sanchez</p>
-          </div>
+          <?php endforeach; ?>
           <div class="button-container">
-            <a href="#" class="button float-rigth">Ver todos</a>
+            <a href="calendario.php" class="button float-rigth">Ver todos</a>
           </div>
         </div>
-
-        <div id="seminarios" class="info-curso ocultar">
-          <div class="event-detail">
-            <h3>Diseño UI/UX para moviles</h3>
-            <p><i class="fas fa-clock"></i> 17:00 hrs</p>
-            <p><i class="fas fa-calendar-alt"></i> 11 de Dic</p>
-            <p><i class="fas fa-user"></i> Harold Garcia</p>
-          </div>
-          <div class="event-detail">
-            <h3>Aprende a programar en una mañana</h3>
-            <p><i class="fas fa-clock"></i> 10:00 hrs</p>
-            <p><i class="fas fa-calendar-alt"></i> 10 de Dic</p>
-            <p><i class="fas fa-user"></i> Susana Rivera</p>
-          </div>
-          <div class="button-container">
-            <a href="#" class="button">Ver todos</a>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>

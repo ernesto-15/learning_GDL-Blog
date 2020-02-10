@@ -124,16 +124,6 @@
           element.classList.add('active')
         })
 
-        document.querySelectorAll('body.registro .principal-menu a').forEach(element => {
-          if(element.textContent === 'Reservaciones') {
-            link_menu.push(element)
-          }
-        });
-
-        link_menu.forEach(element => {
-          element.classList.add('active')
-        })
-
 
 
 
