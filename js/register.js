@@ -20,6 +20,7 @@
         let calculate = document.getElementById('calc');
         let errorDiv = document.getElementById('error');
         let btnRegistro = document.getElementById('btnRegistro');
+        btnRegistro.disabled = true;
         let totalProductsList = document.getElementById('products-list');
         let totalSum = document.getElementById('total-sum');
 
@@ -77,7 +78,8 @@
                 totalSum.innerHTML = `$ ${totalPay.toFixed(2)}`;
 
 
-
+                btnRegistro.disabled = false;
+                document.getElementById('total_pedido').value = totalPay;
                 console.log(productsList);
             }
         }
@@ -140,8 +142,6 @@
         lastname.addEventListener('blur', validateFields);
         email.addEventListener('blur', validateFields);
         email.addEventListener('blur', validateEmail);
-
-        console.log("name.value");
 
     });
 })();
